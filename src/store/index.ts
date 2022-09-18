@@ -1,15 +1,21 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
-})
+    state: {
+        currentPage: 'questions',
+        isCollapsed: false,
+    },
+    mutations: {
+        toggleMenu(state): void {
+            state.isCollapsed = !state.isCollapsed;
+        },
+        setcurrentPage(state, item): void {
+            state.currentPage = item;
+        }
+    },
+    actions: {
+    }
+});

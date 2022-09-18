@@ -1,32 +1,30 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <router-view />
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import { State } from 'vuex-class';
+
+@Component
+export default class App extends Vue {
+  @State((state) => state.currentPage) currentPage!: string;
+
+  mounted(): void {
+    if (this.$route.path !== `/${this.currentPage}` && !(this.$route.path || '').includes('quiz'))
+      this.$router.push(this.currentPage);
+  }
 }
+</script>
 
-#nav {
-  padding: 30px;
+<style lang="scss">
+* {
+  font-family: "Lato", sans-serif;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 </style>

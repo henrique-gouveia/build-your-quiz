@@ -1,0 +1,25 @@
+{
+  "name": "build-your-quiz-api",
+  "version": "1.0.0",
+  "description": "Build Your Quiz Api",
+  "main": "./src/index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node index.js"
+  },
+  "author": "Henrique Gouveia",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "consign": "0.1.6",
+    "cors": "2.8.4",
+    "dotenv": "10.0.0",
+    "express": "4.16.3",
+    "knex": "0.95.14",
+    "pg": "8.7.1",
+    "uuid": "8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
+  }
+}
